@@ -68,6 +68,20 @@ describe('Cinema', function () {
     assert.deepStrictEqual(actual, expected);
   });
 
-  it('should be able to calculate total running time of all films');
+  it('should be able to calculate total running time of all films',function(){
+    const actual = cinema.total_runtime();
+    const expected = 622;
+    assert.strictEqual(actual, expected)
+  });
+  it('should be able to filter films by year',function(){
+    const actual = cinema.films_by_property('year',2016);
+    const expected = [moonlight];
+    assert.deepStrictEqual(actual, expected)
+  });
+  it('should be able to filter films by genre',function(){
+    const actual = cinema.films_by_property('genre','sci-fi');
+    const expected = [bladeRunner];
+    assert.deepStrictEqual(actual, expected)
+  });
 
 });
