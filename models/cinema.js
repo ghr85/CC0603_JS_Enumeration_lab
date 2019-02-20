@@ -25,6 +25,16 @@ Cinema.prototype.find_film_by_genre = function(genre_str){
           return true;
         };
   };
+ Cinema.prototype.is_over_length = function(length_int){
+   const temp_film_ary = this.films.filter(
+      film => length_int < film.length);
+      if (temp_film_ary.length === 0){
+        return false;
+      } else {
+          return true;
+        };
+  };
+
 
 
 module.exports = Cinema;

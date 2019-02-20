@@ -57,7 +57,17 @@ describe('Cinema', function () {
   });
 
 
-  it('should be able to check whether all films are over a particular length');
+  it('should be able to check whether all films are over a particular length - TRUE', function(){
+    const actual = cinema.is_over_length(90);
+    const expected = true;
+    assert.deepStrictEqual(actual, expected);
+  });
+  it('should be able to check whether all films are over a particular length - FALSE', function(){
+    const actual = cinema.is_over_length(180);
+    const expected = false;
+    assert.deepStrictEqual(actual, expected);
+  });
+
   it('should be able to calculate total running time of all films');
 
 });
