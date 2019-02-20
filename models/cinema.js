@@ -16,4 +16,15 @@ Cinema.prototype.find_film_by_genre = function(genre_str){
      film => genre_str === film.genre);
  };
 
+ Cinema.prototype.has_film_by_year = function(year_int){
+   const temp_film_ary = this.films.filter(
+      film => year_int === film.year);
+      if (temp_film_ary.length === 0){
+        return false;
+      } else {
+          return true;
+        };
+  };
+
+
 module.exports = Cinema;
